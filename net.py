@@ -119,9 +119,9 @@ class network:
         sumSPG += sum([x * x for x in grad])
         return grad
 
-    def stochasticGD(self, nEpoch):
+    def stochasticGD(self, nEpoch = 1):
         for _ in range(nEpoch):
-            id = [i for i in range(0, self.polyLayer.order)]
+            id = [i for i in range(0, self.nData)]
             random.shuffle(id)
 
             for j in id:
