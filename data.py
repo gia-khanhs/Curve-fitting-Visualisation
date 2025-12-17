@@ -6,7 +6,7 @@ def g(x):
     return cmath.sin(2 * cmath.pi * x)
 
 def generateData(N = 20, l = 0.0, r = 1):
-    stdDev = 0.2
+    stdDev = 0.1
     retX = []
     retY = []
     for i in range(N):

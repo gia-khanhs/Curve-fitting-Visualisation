@@ -8,7 +8,7 @@ class kernel:
             if i: self.derivative.append(i * pow(x, i - 1))
             else: self.derivative.append(0)
 
-def crossProduct(x, y):
+def dotProduct(x, y):
     assert(len(x) == len(y))
     ret = 0
 
