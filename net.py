@@ -129,27 +129,6 @@ class network:
                 self.polyLayer.adjustW(g, self.learningRate)
                 self.errLayer = errorLayer(self.polyLayer, self.y)
 
-    def miniBatchGradient(self, size):
-        miniBatch = random.sample(self.dataID, size)
-        grad = [0] * (self.polyLayer.order + 1)
-
-        for i in miniBatch:
-            dedf = self.errLayer.derivative[i]
-            for j in range(self.polyLayer.order + 1):
-                dfdw = self.polyLayer.kernel[i].val[j]
-                grad[j] += dedf * dfdw
-
-        grad = [deriv / size for deriv in grad]
-        global sumSPG
-        sumSPG += sum([x * x for x in grad])
-        return grad
-    
-    def miniBatchGD(self, size, nEpoch = 1):
-        for i in range(nEpoch):
-            g = self.miniBatchGradient(size)
-            self.polyLayer.adjustW(g, self.learningRate)
-            self.errLayer = errorLayer(self.polyLayer, self.y)
-
     def momentumGD(self, gamma=0.9, nEpoch=1, ada = False):
         if not hasattr(self, "velocity"):
             self.velocity = [0] * (self.polyLayer.order + 1)

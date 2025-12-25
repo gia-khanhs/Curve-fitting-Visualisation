@@ -2,7 +2,6 @@ from data import generateData, g
 from net import network
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-import matplotlib
 import numpy
 
 #========================================================
@@ -11,11 +10,12 @@ import numpy
 fig, axis = plt.subplots(1, 2)
 fig.set_size_inches(12, 6.75)
 #========================================================
-nData = 5
+nData = 10
 xData, yData = generateData(nData)
 
-order = 10
-learningRate = 0.75#0.05
+order = 3
+learningRate = 0.3#0.05
+# learningRate = 0.1
 # learningRate = 0.2
 '''nData = 20, lR = 0.05'''
 '''nData * lR = 0.05 * 20 = 1'''
