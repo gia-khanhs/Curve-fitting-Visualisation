@@ -1,5 +1,5 @@
-from data import generateData, g
-from net import network
+from utilities.data import generateData, g
+from utilities.net import network
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy

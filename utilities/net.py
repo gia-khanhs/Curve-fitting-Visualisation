@@ -1,4 +1,4 @@
-from mth import kernel, dotProduct
+from .mth import kernel, dotProduct
 import random
 import math
 
